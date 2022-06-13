@@ -1,0 +1,13 @@
+<script>
+
+  async function getTrips() {
+    const url =
+      // 'https://s3.amazonaws.com/kcm-alerts-realtime-prod/tripupdates_enhanced.json';
+      'https://s3.amazonaws.com/kcm-alerts-realtime-prod/tripupdates_pb.json'
+    const response = await fetch(url); //, {Access-Control-Allow-Origin:'a' }); //, { mode: 'no-cors' });
+    // json = await response;
+    // console.log(json);
+  }
+
+  getTrips();
+</script>
