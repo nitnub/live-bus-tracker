@@ -5,52 +5,28 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    
+    <link href='https://api.mapbox.com/mapbox.js/v3.3.1/mapbox.css' rel='stylesheet' />
     <link rel="stylesheet" href="styles/style.css">
-    <!-- <script src="https://api.mapbox.com/mapbox-gl-js/v1.11.0/mapbox-gl.js"></script>
-    <link
-      rel="stylesheet"
-      href="https://api.mapbox.com/mapbox-gl-js/v1.11.0/mapbox-gl.css"
-    /> -->
-
-    <!-- <script src="https://api.mapbox.com/mapbox.js/plugins/leaflet-markercluster/v1.0.0/leaflet.markercluster.js"></script>
-    <link
-      href="https://api.mapbox.com/mapbox.js/plugins/leaflet-markercluster/v1.0.0/MarkerCluster.css"
-      rel="stylesheet"
-    /> -->
-
-    <!-- <link
-      href="https://api.mapbox.com/mapbox.js/plugins/leaflet-markercluster/v1.0.0/MarkerCluster.Default.css"
-      rel="stylesheet"
-    /> -->
-
-    <!-- <script src='https://api.mapbox.com/mapbox-gl-js/v2.8.2/mapbox-gl.js'></script>
-<link href='https://api.mapbox.com/mapbox-gl-js/v2.8.2/mapbox-gl.css' rel='stylesheet' /> -->
-
+    <script src='https://api.mapbox.com/mapbox.js/v3.3.1/mapbox.js'></script>
     
-
-<!-- <script src="https://api.mapbox.com/mapbox.js/plugins/leaflet-markercluster/v1.0.0/leaflet.markercluster.js"></script>
-<link
-  href="https://api.mapbox.com/mapbox.js/plugins/leaflet-markercluster/v1.0.0/MarkerCluster.css"
-  rel="stylesheet"
-/>
-<link
-  href="https://api.mapbox.com/mapbox.js/plugins/leaflet-markercluster/v1.0.0/MarkerCluster.Default.css"
-  rel="stylesheet"
-/> -->
-
-<script src='https://api.mapbox.com/mapbox.js/v3.3.1/mapbox.js'></script>
-<link href='https://api.mapbox.com/mapbox.js/v3.3.1/mapbox.css' rel='stylesheet' />
-
-
-
-
     </head>
-
-    
+  
   </head>
   <body>
 
+    <!-- Header -->
+    <div class="header">
+      <div class="container">
+      <div class="project-name">Seattle Bus Stop Tracker</div>
+      
+      <div class="nav"><a href="boston.html">Go to Boston</a></div>
+    </div>
+  </div>
+
+  <!-- Main view container -->
     <div class="container">
+
       <div class="route-controls">
       <label for="routes">Choose a route:</label>
 
@@ -64,23 +40,16 @@
         <option value="100340">South Lake Union Streetcar</option>
         <option value="102638">First Hill Streetcar</option>
       </select>
+      <p>This map allows you to view all bus stops along any "Rapid Ride" or streetcar line. Please note that some lines run outside of the regular city limits - if you don't see any stops, try moving the map or selecting another line.</p>
+      <p>Click "Go to Boston" at the top of the page to view a map with a dynamic marker that jumps from stop to stop.</p>
     </div>
 
       <div id="map"></div>
     </div>
     
-    <!-- <script src="seattle.js"></script> -->
-    <!-- <script src="stops.js"></script> -->
-
-
-
-
-    
+  
     <script src="busroutes.js"></script>
     <script src="mapanimation.js"></script>
-    <!-- <script src="maptests.js"></script> -->
-    
-
-    
+    <!-- <script src="utilities/maptests.js"></script> -->
   </body>
 </html>
