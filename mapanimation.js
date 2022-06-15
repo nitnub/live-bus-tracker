@@ -1,8 +1,8 @@
 L.mapbox.accessToken =
-  'pk.eyJ1IjoibmJtYXBwZXIiLCJhIjoiY2w0YzN1aXJiMXJzdjNqcWl1Y2x0cmkzdSJ9.vPMwYi2_oF4ST-AC1xRDMQ';
+  'pk.eyJ1IjoibmJtYXBwZXIiLCJhIjoiY2w0ZmFra3NvMDFmaTNpbXl2eHFraHM0eCJ9.bbJV8O8l1K3p9-c-FShsUw';
 
 // downtown Seattle lat/long
-const latlng = L.latLng(47.6, -122.3);
+const latlng = L.latLng(47.61, -122.32);
 
 // create map
 const map = L.mapbox
@@ -17,7 +17,6 @@ const currentMarkers = [];
 const routes = document.getElementById('routes');
 routes.addEventListener('change', () => {
   const selected = routes.value;
-  console.log(selected);
   const currentRoute = getRoute(selected, allRoutes);
 
   if (currentMarkers.length >= 0) {
@@ -51,8 +50,6 @@ function addStopsToMap(route) {
 const myIcon = L.icon({
   iconUrl: 'icons/bus-stop-blue.png',
   iconSize: [38, 38],
-  iconAnchor: [22, 94],
-  popupAnchor: [-3, -76],
 });
 
 function createMarker(stop) {
@@ -66,3 +63,14 @@ function createMarker(stop) {
 }
 
 function getBusMarkers() {}
+
+// Set initial markers
+const starterRoute = getRoute('102576', allRoutes);
+
+if (currentMarkers.length >= 0) {
+  for (let i = 0; i < currentMarkers.length; i++) {
+    currentMarkers[i].remove();
+  }
+}
+
+addStopsToMap(starterRoute);
