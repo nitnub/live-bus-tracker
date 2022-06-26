@@ -39,23 +39,22 @@ function populateMap() {
 }
 
 // get handle on routes selector
-try {const routes = document.getElementById('routes');
+try {
+  const routes = document.getElementById('routes');
 
-routes.addEventListener('change', () => {
-  const selected = routes.value;
-  const currentRoute = getRoute(selected, allRoutes);
+  routes.addEventListener('change', () => {
+    const selected = routes.value;
+    const currentRoute = getRoute(selected, allRoutes);
 
-  if (currentMarkers.length >= 0) {
-    for (let i = 0; i < currentMarkers.length; i++) {
-      currentMarkers[i].remove();
+    if (currentMarkers.length >= 0) {
+      for (let i = 0; i < currentMarkers.length; i++) {
+        currentMarkers[i].remove();
+      }
     }
-  }
 
-  addStopsToMap(currentRoute);
-});
-} catch(err) {
-
-}
+    addStopsToMap(currentRoute);
+  });
+} catch (err) {}
 
 function getRoute(id, routes) {
   for (let i = 0; i < routes.length; i++) {
@@ -96,7 +95,6 @@ function createMarker(stop) {
   currentMarkers.push(marker);
 }
 
-
 //
 // Boston JS
 //
@@ -117,8 +115,11 @@ async function run() {
 
   // Create an array to hold references to all current Boston markers
   const bostonMarkers = [];
-  
+
+  // Initial population of the map
   updateBusData(bostonMap, bostonMarkers);
+
+  // Update the map every 10 seconds
   setInterval(() => {
     updateBusData(bostonMap, bostonMarkers);
   }, 10000);
@@ -132,7 +133,7 @@ async function getBusLocations() {
   return json.data;
 }
 
-// get bus data
+// Update and place markers for each available bus
 async function updateBusData(targetMap, targetMarkers) {
   clearMarkers(targetMarkers);
   const locations = await getBusLocations();
@@ -145,11 +146,9 @@ async function updateBusData(targetMap, targetMarkers) {
     const lon = bus.attributes.longitude;
     const busId = bus.attributes.label;
     const status = bus.attributes.current_status;
-    console.log(bus);
-    console.log(lon);
-    console.log(lat);
+    const nextStop = bus.relationships.stop.data.id;
 
-    // Create a DOM element for each marker.
+    // Create a DOM element / marker for the bus
     const busDiv = document.createElement('div');
     const width = 38;
     const height = 38;
@@ -158,13 +157,21 @@ async function updateBusData(targetMap, targetMarkers) {
     busDiv.style.width = `${width}px`;
     busDiv.style.height = `${height}px`;
     busDiv.style.backgroundSize = '100%';
+    busDiv.style.cursor = 'pointer';
     busDiv.title = `Bus ${busId}`;
 
+    let nextStopString = `Bus ${busId}.`;
+
+    // If data about next stop is available, include it in the alert.
+    if (status === 'IN_TRANSIT_TO') {
+      nextStopString = `Bus ${busId}'s next destination is stop ${nextStop}.`;
+    }
+
     busDiv.addEventListener('click', () => {
-      window.alert(`Bus ${busId}`);
+      window.alert(nextStopString);
     });
 
-    // Add markers to the map.
+    // Add DOM element / marker to the map.
     new mapboxgl.Marker(busDiv).setLngLat([lon, lat]).addTo(targetMap);
     targetMarkers.push(busDiv);
   }
@@ -178,5 +185,5 @@ function clearMarkers(markerArray) {
       markerArray[i].remove();
     }
   }
-  console.log(markerArray);
+  markerArray.length = 0;
 }

@@ -1,10 +1,10 @@
 # Real Time Bus Tracker
 
-This is a basic bus stop tracker for the Seattle and Boston areas. Jump between the two maps by clicking the link at the top-right of the screen. Note that you will need a [Mapbox](https://www.mapbox.com/) API key in order to view the maps. 
+This is a basic bus & bus stop tracker for the Boston and Seattle areas, respectively. Jump between the two maps by clicking the link at the top-right of the screen. Note that you will need a [Mapbox](https://www.mapbox.com/) API key in order to view the maps. 
 
-* Seattle: Select a line from the drop-down to view all available stops. Each stop is clickable and will tell you the intersection / stop name.
+* Seattle: Enter your Mapbox key and select a line from the drop-down to view all available stops. Each stop is clickable and will tell you the intersection / stop name.
 
-* Boston: Click the button at the top-left of the screen to update the marker location.
+* Boston: Enter your Mapbox key and click the button at the top-left of the screen to begin live tracking of all buses traveling the route 1 line which connects MIT and Harvard. All data updates every 10 seconds.
 
 
 ## How to Run
@@ -12,7 +12,8 @@ To run this project, simply navigate to [https://nitnub.github.io/live-bus-track
 
 
 ## Roadmap of Future Improvements
-* Expand bus positioning functionality for both cities.
+* Expand bus tracking functionality to the Seattle map.
+* Add stops to the Boston map.
 * Enhance with bootstrap.
 * Add dark mode.
 
