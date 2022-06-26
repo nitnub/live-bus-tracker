@@ -7,7 +7,7 @@ This is a basic bus stop tracker for the Seattle and Boston areas. Jump between 
 * Boston: Click the button a the top-left of the screen to update the marker location.
 
 ## How to Run
-To run this project, navigate to [https://nitnub.github.io/live-bus-tracker](https://nitnub.github.io/live-bus-tracker/)
+To run this project, navigate to [https://nitnub.github.io/live-bus-tracker](https://nitnub.github.io/live-bus-tracker/) and follow the instructions on the page.
 
 
 ## Future Improvements
