@@ -3,19 +3,6 @@ body {
   padding: 0;
 }
 
-.header {
-  background-color: rgb(81, 81, 75);
-}
-.header .container  {
-  display: flex;
-  justify-content: space-between;
-  grid-column: 1/4;
-  align-items: center;
-  padding: 10px;
-  height: 45px;
-  color: rgb(255, 255, 255);
-}
-
 .container {
   display: grid;
   grid-template-columns: 1fr 5fr 25px; 
@@ -28,6 +15,21 @@ body {
   /* removes the small gap above the header, caused by the h1 margin. */
   overflow: auto;
 }
+
+.header {
+  background-color: rgb(81, 81, 75);
+}
+
+.header .container  {
+  display: flex;
+  justify-content: space-between;
+  grid-column: 1/4;
+  align-items: center;
+  padding: 10px;
+  height: 45px;
+  color: rgb(255, 255, 255);
+}
+
 .route-controls {
   padding: 10px;
   grid-column: 1 / 2;
