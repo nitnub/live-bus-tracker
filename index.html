@@ -28,6 +28,14 @@
     <div class="container">
 
       <div class="route-controls">
+        <!-- <label class="key-form"> -->
+          <label for="key-field">Mapbox key:</label>
+          
+          <input class="key-field" type="text" id="mapbox-key" />
+          <!-- <input type="button" value="Submit"> -->
+          <button id="submit-button" onclick="populateMap()">Submit Key</button>
+        <!-- </label> -->
+        <br>
       <label for="routes">Choose a route:</label>
 
       <select name="routes" id="routes">
@@ -40,7 +48,8 @@
         <option value="100340">South Lake Union Streetcar</option>
         <option value="102638">First Hill Streetcar</option>
       </select>
-      <p>This map allows you to view all bus stops along any "Rapid Ride" or streetcar line. Please note that some lines run outside of the regular city limits - if you don't see any stops, try moving the map or selecting another line.</p>
+      <p>This map allows you to view all bus stops along any "Rapid Ride" or streetcar line. Enter your Mapbox key in the above field to access the map.</p>
+      <p>Please note that some lines run outside of the regular city limits - if you don't see any stops, try moving the map or selecting another line.</p>
       <p>Click "Go to Boston" at the top of the page to view a map with a dynamic marker that jumps from stop to stop.</p>
     </div>
 
@@ -50,6 +59,6 @@
   
     <script src="busroutes.js"></script>
     <script src="mapanimation.js"></script>
-    <!-- <script src="utilities/maptests.js"></script> -->
+
   </body>
 </html>
