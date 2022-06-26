@@ -6,19 +6,22 @@ This is a basic bus stop tracker for the Seattle and Boston areas. Jump between 
 
 * Boston: Click the button at the top-left of the screen to update the marker location.
 
+
 ## How to Run
 To run this project, simply navigate to [https://nitnub.github.io/live-bus-tracker](https://nitnub.github.io/live-bus-tracker/) and follow the instructions on the page.
 
 
-## Future Improvements
+## Roadmap of Future Improvements
 * Expand bus positioning functionality for both cities.
 * Enhance with bootstrap.
 * Add dark mode.
 
+
 ## Thank You
 Thank you to [Mavadee](https://www.flaticon.com/authors/mavadee) for the custom bus stop icon. 
 
-## License information: 
+
+## License information
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 

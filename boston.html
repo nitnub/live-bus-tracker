@@ -12,10 +12,14 @@
       href="https://api.mapbox.com/mapbox-gl-js/v1.11.0/mapbox-gl.css"
       rel="stylesheet"
     />
+    <link href='https://api.mapbox.com/mapbox.js/v3.3.1/mapbox.css' rel='stylesheet' />
+    <link rel="stylesheet" href="styles/style.css">
+    <script src='https://api.mapbox.com/mapbox.js/v3.3.1/mapbox.js'></script>
 
     <link rel="stylesheet" href="styles/style.css" />
   </head>
   <body>
+    <script src="./mapanimation.js"></script>
     <!-- Header -->
     <div class="header">
       <div class="container">
@@ -34,7 +38,7 @@
           <input class="key-field" type="text" id="mapbox-key" />
         </label>
 
-        <button class="btn-main" onclick="move()">
+        <button class="btn-main" onclick="run()">
           Show stops between MIT and Harvard
         </button>
 
@@ -54,7 +58,7 @@
 
     <div class="map-overlay top"></div>
 
-    <script>
+    <!-- <script>
       // an array of several bus stops
       const bostonBusStops = [
         [-71.093729, 42.359244],
@@ -93,6 +97,7 @@
           counter++;
         }, 1000);
       }
-    </script>
+    </script> -->
+    
   </body>
 </html>
